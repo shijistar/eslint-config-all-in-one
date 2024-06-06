@@ -1,0 +1,13 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+echo "\x1B[35m Performing code linting and formatting. \x1B[39m"
+echo "\x1B[35m It may take some time, please be patient... \x1B[39m"
+
+npx --no-install lint-staged
+
+sleep 0.3
+echo "\033[32m Lint completed! \033[0m"
+echo
+
+sleep 1

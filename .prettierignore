@@ -1,0 +1,14 @@
+node_modules
+lib
+
+.dockerignore
+.DS_Store
+.eslintignore
+.editorconfig
+Dockerfile*
+.gitignore
+.prettierignore
+.prettierrc.json
+LICENSE
+*.lock
+pnpm-lock.yaml
