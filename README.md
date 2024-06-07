@@ -29,9 +29,9 @@ module.exports = {
 
 ### Recommended configuration
 
-- For `React` projects, it is recommended to use the `@tiny-codes/react` or `@tiny-codes/react-all` preset
-- For `Vue` projects, it is recommended to use the `@tiny-codes/vue`, `@tiny-codes/vue-typescript` or `@tiny-codes/vue-all` preset
-- For `Next.js` projects, it is recommended to use the `@tiny-codes/next` or `@tiny-codes/next-all` preset
+- For `React` projects, it is recommended to use the `@tiny-codes/react-recommended` or `@tiny-codes/react-all` preset
+- For `Vue` projects, it is recommended to use the `@tiny-codes/vue-recommended`, `@tiny-codes/vue-typescript` or `@tiny-codes/vue-all` preset
+- For `Next.js` projects, it is recommended to use the `@tiny-codes/next-recommended` or `@tiny-codes/next-all` preset
 - Here are some basic presets that you can also combine the presets to create your own configuration, please note again that `@tiny-codes/prettier` should be the last one
   - `@tiny-codes/base`: base configuration
   - `@tiny-codes/recommended`: recommended configuration
@@ -63,8 +63,9 @@ Add `husky` related configuration in `package.json`:
 +  "prepare": "husky"
 },
 +"lint-staged": {
-+  "*.{js,jsx,ts,tsx}": "eslint --fix",
-+  "*.{js,jsx,ts,tsx,md}": "prettier --write"
++  "*.{js,jsx,ts,tsx,vue}": "eslint --fix",
++  "*.{css,less,scss}": "stylelint --fix",
++  "*.{js,jsx,ts,tsx,vue,md,json,css,less,scss}": "prettier --write"
 +},
 ```
 

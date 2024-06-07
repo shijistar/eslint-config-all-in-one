@@ -8,7 +8,7 @@ module.exports = {
     },
   },
   rules: {
-    'react/no-array-index-key': ['error'], // 禁止在数组中遍历中使用数组key做索引
-    'react-hooks/exhaustive-deps': ['error'], // 检查 effect 的依赖
+    'react/no-array-index-key': ['error'], // Prevent using array index in keys
+    'react-hooks/exhaustive-deps': ['error'], // Checks effect dependencies
   },
 };

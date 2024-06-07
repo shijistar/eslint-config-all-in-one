@@ -1,11 +1,17 @@
 /**
- * 合并 ESLint 配置对象，支持多个配置对象，后面的配置对象会覆盖前面的配置对象
+ * Merge ESLint configuration objects, support multiple
+ * configuration objects, the latter configuration object
+ * will override the former configuration object
  *
  * @param {...import('eslint').ESLint.ConfigData} configs -
- *   ESLint 配置对象
+ *   ESLint configuration objects to merge, the latter
+ *   configuration object will override the former
+ *   configuration object. None of the configuration objects
+ *   will be modified, and a new configuration object will
+ *   be returned.
  *
- * @returns {import('eslint').ESLint.ConfigData} - 合并后的
- *   ESLint 配置对象
+ * @returns {import('eslint').ESLint.ConfigData} - The
+ *   merged ESLint configuration object.
  */
 function mergeConfig(...configs) {
   return configs.reduce(

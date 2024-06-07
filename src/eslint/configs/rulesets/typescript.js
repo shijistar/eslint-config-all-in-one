@@ -38,10 +38,10 @@ module.exports = {
       },
 
       rules: {
-        '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', args: 'none' }], // 禁止出现未使用过的变量
-        '@typescript-eslint/consistent-type-imports': ['error'], // 确保使用一致的导入风格
+        '@typescript-eslint/no-unused-vars': ['error', { vars: 'all', args: 'none' }], // Disallow unused variables
+        '@typescript-eslint/consistent-type-imports': ['error'], // Enforce consistent imports
         '@typescript-eslint/consistent-type-exports': [
-          // 确保使用一致的导出风格
+          // Enforce consistent exports
           'error',
           {
             fixMixedExportsWithInlineTypeSpecifier: false,
@@ -50,8 +50,8 @@ module.exports = {
         '@typescript-eslint/no-explicit-any': [
           'error',
           { ignoreRestArgs: true, fixToUnknown: true },
-        ], // 禁止显式使用any类型
-        '@typescript-eslint/no-non-null-assertion': 'off', // 关闭【禁止使用非空断言】的规则
+        ], // Disallow usage of the any type
+        '@typescript-eslint/no-non-null-assertion': 'off', // Disallow non-null assertion
         '@typescript-eslint/no-use-before-define': [
           'error',
           {
@@ -63,17 +63,17 @@ module.exports = {
             typedefs: false,
             // ignoreTypeReferences: true,
           },
-        ], // 禁止在变量定义之前使用它们
+        ], // Disallow using variables before they are defined
         '@typescript-eslint/ban-ts-comment': [
-          // 禁止通过 //@ts-*** 指令来关闭TS检查，除非提供了合理的解释原因
+          // Bans `@ts-***` comments from being used or requires descriptions after directive
           'error',
           {
             'ts-nocheck': true,
             'ts-check': false,
             'ts-ignore': true,
-            // 例如：//@ts-expect-error: TS1234 因为这里是一个错误示例
+            // For example: //@ts-expect-error: TS1234 because this is an error example
             'ts-expect-error': {
-              descriptionFormat: '^: (因为|because\\s).+$',
+              descriptionFormat: '^:\\s(因为|because( of)?|since).+$',
             },
             minimumDescriptionLength: 4,
           },

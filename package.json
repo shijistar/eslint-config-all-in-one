@@ -14,7 +14,7 @@
     "type": "git",
     "url": "https://github.com/shijistar/eslint-config"
   },
-  "author": "李凤宝(Ted) <shijistar@gmail.com>",
+  "author": "李凤宝(Fabio) <shijistar@gmail.com>",
   "main": "index.js",
   "files": [
     "src",
@@ -39,6 +39,7 @@
     "@rushstack/eslint-patch": "^1.10.3",
     "@tanstack/eslint-plugin-query": "^5.35.6",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@types/eslint": "^8.56.10",
     "@typescript-eslint/eslint-plugin": "^7.12.0",
     "@typescript-eslint/parser": "^7.12.0",
     "commitlint": "^19.3.0",
