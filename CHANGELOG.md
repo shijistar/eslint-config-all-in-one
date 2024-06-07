@@ -1,4 +1,4 @@
-# @tiny-codes/eslint-config
+# @tiny-codes/eslint-config-all-in-one
 
 ## v1.0.0
 
@@ -6,12 +6,14 @@
 
 ### Features
 
-- Add `eslint` configuration rules
+- Provide the following `eslint` presets:
   - `@tiny-codes/recommended`
   - `@tiny-codes/react`
   - `@tiny-codes/next`
   - `@tiny-codes/base`
   - `@tiny-codes/base-typescript`
-- Add `prettier` configuration rules
-  - `@tiny-codes/eslint-config/src/prettier/config.json`
-- Add `husky` configuration, please refer to the [README.md](./README.md) document
+- Provide `prettier` configuration
+  - `@tiny-codes/eslint-config-all-in-one/src/prettier/config`
+- Provide `stylelint` configuration
+  - `@tiny-codes/eslint-config-all-in-one/src/stylelint/config`
+- Provide `husky` configuration, please refer to the [README.md](./README.md) document

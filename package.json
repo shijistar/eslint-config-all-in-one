@@ -1,5 +1,5 @@
 {
-  "name": "@tiny-codes/eslint-config",
+  "name": "@tiny-codes/eslint-config-all-in-one-all-in-one",
   "version": "1.0.0",
   "description": "Provides most common used eslint, prettier, stylelint, prettier configurations, ALL IN ONE.",
   "keywords": [
@@ -40,6 +40,7 @@
     "@tanstack/eslint-plugin-query": "^5.35.6",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/eslint": "^8.56.10",
+    "@types/lint-staged": "^13.3.0",
     "@typescript-eslint/eslint-plugin": "^7.12.0",
     "@typescript-eslint/parser": "^7.12.0",
     "commitlint": "^19.3.0",
@@ -62,7 +63,7 @@
     "prettier-plugin-two-style-order": "^1.0.1",
     "stylelint": "^16.6.1",
     "stylelint-config-css-modules": "^4.4.0",
-    "stylelint-config-recommended": "^14.0.0",
+    "stylelint-config-standard": "^36.0.0",
     "stylelint-declaration-block-no-ignored-properties": "^2.8.0"
   },
   "devDependencies": {
@@ -86,6 +87,9 @@
     "typescript": {
       "optional": true
     }
+  },
+  "optionalDependencies": {
+    "stylelint-scss": "^6.3.1"
   },
   "packageManager": "pnpm@9.2.0",
   "engines": {

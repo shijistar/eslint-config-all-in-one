@@ -4,10 +4,16 @@ module.exports = {
   plugins: ['import'],
   parser: '@babel/eslint-parser',
   parserOptions: {
-    requireConfigFile: false,
     sourceType: 'module',
+    requireConfigFile: false,
     allowImportExportEverywhere: true,
+    ecmaFeatures: {
+      jsx: true,
+    },
     babelOptions: {
+      babelrc: false,
+      configFile: false,
+      browserslistConfigFile: false,
       caller: {
         supportsTopLevelAwait: true,
       },
@@ -16,5 +22,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es2022: true,
+    jest: true,
   },
 };

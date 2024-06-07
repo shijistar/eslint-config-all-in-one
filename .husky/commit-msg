@@ -1,8 +1,10 @@
 #!/usr/bin/env sh
+echo . "$(dirname "$0")/_/husky.sh"
 
-. "$(dirname "$0")/_/husky.sh"
 
-echo "\x1B[35m Checking commit messages... \x1B[39m"
-sleep 0.5
+# . "$(dirname "$0")/_/husky.sh"
 
-npx commitlint --edit $1
+#echo "\x1B[35m Checking commit messages... \x1B[39m"
+#sleep 0.5
+#
+#npx commitlint --edit $1

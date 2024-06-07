@@ -1,7 +1,7 @@
-# @tiny-codes/eslint-config
+# @tiny-codes/eslint-config-all-in-one
 
 todo: 添加umi的配置
-todo: 添加stylelint的配置
+todo: 添加stylelint的配置，拆分成scss和css两个配置
 
 Provides most common `ESLint`, `Prettier`, `Stylelint` configurations, and a guide to set up `Husky` and `Commitlint` for a project. It is recommended to use this configuration for all projects to maintain a consistent code style.
 
@@ -10,7 +10,7 @@ It's assumed that your project is enabled with typescript by default, if not, yo
 ## Installation
 
 ```bash
-npm install -D @tiny-codes/eslint-config
+npm install -D @tiny-codes/eslint-config-all-in-one
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ module.exports = {
 };
 ```
 
-### Recommended configuration
+#### Presets
 
 - For `React` projects, it is recommended to use the `@tiny-codes/react-recommended` or `@tiny-codes/react-all` preset
 - For `Vue` projects, it is recommended to use the `@tiny-codes/vue-recommended`, `@tiny-codes/vue-typescript` or `@tiny-codes/vue-all` preset
@@ -38,19 +38,43 @@ module.exports = {
   - `@tiny-codes/typescript`: typescript configuration
   - `@tiny-codes/prettier`: prettier configuration
 
+### Stylelint configuration
+
+Create a `.stylelintrc.js` file in the project root directory.
+
+_.stylelintrc.js_
+
+```js
+module.exports = require('@tiny-codes/eslint-config-all-in-one/src/stylelint/config');
+```
+
+If you are using `SCSS`, you should use another configuration.
+
+_.stylelintrc.js_
+
+```js
+module.exports = require('@tiny-codes/eslint-config-all-in-one/src/stylelint/config/scss');
+```
+
+Note that `stylelint-scss` is shipped as optionalDependencies, so if you are NOT using `SCSS`, and want to strip it from your node_modules, please go back to [Installallation](#installation) and add `--no-optional` to the command.
+
+```bash
+npm install -D @tiny-codes/eslint-config-all-in-one --no-optional
+```
+
 ### Prettier configuration
 
-Create a `.prettierrc.js` file in the project root directory with the following configuration:
+Create a `.prettierrc.js` file in the project root directory.
 
 _.prettierrc.js_
 
 ```js
-module.exports = require('@tiny-codes/eslint-config/src/prettier/config.json');
+module.exports = require('@tiny-codes/eslint-config-all-in-one/src/prettier/config');
 ```
 
 ### Husky configuration
 
-Initialize the `husky` configuration:
+Initialize the `husky`:
 
 ```bash
 npx husky init
@@ -75,31 +99,14 @@ _.husky/pre-commit_
 
 ```bash
 #!/usr/bin/env sh
-. "$(dirname -- "$0")/_/husky.sh"
-
-echo "\x1B[35m Performing code linting and formatting. \x1B[39m"
-echo "\x1B[35m It may take some time, please be patient... \x1B[39m"
-
-npx --no-install lint-staged
-
-sleep 0.3
-echo "\033[32m Lint completed! \033[0m"
-echo
-
-sleep 1
+. "node_modules/@tiny-codes/eslint-config-all-in-one/src/husky/hooks/pre-commit.sh"
 ```
 
 _.husky/commit-msg_
 
 ```bash
 #!/usr/bin/env sh
-
-. "$(dirname "$0")/_/husky.sh"
-
-echo "\x1B[35m Checking commit messages... \x1B[39m"
-sleep 0.5
-
-npx commitlint --edit $1
+. "node_modules/@tiny-codes/eslint-config-all-in-one/src/husky/hooks/commit-msg.sh"
 ```
 
 ### Commitlint configuration
@@ -109,8 +116,6 @@ Create a `.commitlintrc.js` file in the project root directory with the followin
 _.commitlintrc.js_
 
 ```js
-module.exports = {
-  extends: ['@commitlint/config-conventional'],
-  parserPreset: 'conventional-changelog-angular',
-};
+const config = require('@tiny-codes/eslint-config-all-in-one/src/commitlint/config');
+module.exports = config;
 ```
